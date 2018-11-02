@@ -1,0 +1,23 @@
+### Code for delete all style from a Excel worksheet
+
+Sub StyleKill()
+     Dim styT As Style
+     Dim intRet As Integer
+     On Error Resume Next
+     For Each styT In ActiveWorkbook.Styles
+         If Not styT.BuiltIn Then
+             If styT.Name <> "1" Then styT.Delete
+         End If
+     Next styT
+ End Sub
+ 
+ ### Code for Unhide all Excel Sheets on a workbooks 
+ 
+ Sub UnhideAllSheets()
+    Dim ws As Worksheet
+ 
+    For Each ws In ActiveWorkbook.Worksheets
+        ws.Visible = xlSheetVisible
+    Next ws
+ 
+End Sub
