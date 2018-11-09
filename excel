@@ -21,3 +21,26 @@ Sub StyleKill()
     Next ws
  
 End Sub
+
+
+### Code to Do a If-ElseIf on VBA, define a function in a Module
+
+Function getBucket(rngOriginal As Range) As String
+    Dim strReturn As String
+
+    rng = rngOriginal * 100
+
+    If rng >= 0 And rng <= 10 Then strReturn = "0%-10%"
+    ElseIf rng > 10 And rng <= 25 Then strReturn = "11%-25%"
+    ElseIf rng > 25 And rng <= 50 Then strReturn = "26%-50%"
+    ElseIf rng > 50 And rng <= 75 Then strReturn = "51%-75%"
+    ElseIf rng > 75 And rng <= 100 Then strReturn = "76%-100%"
+    ElseIf rng > 100 And rng <= 200 Then strReturn = "101%-200%"
+    ElseIf rng > 200 Then strReturn = "201% +"
+    Else: strReturn = ""
+    ' And rng <= 300 Then strReturn = "201%-300%"
+    'If rng > 300 Then strReturn = "301+"
+    
+    
+    getBucket = strReturn
+    End Function
